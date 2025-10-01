@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Well Soon ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #ffe6f0, #e6f7ff);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 600px;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    button {
+      background: #ff4d6d;
+      border: none;
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 16px;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #e63950;
+    }
+    .heart {
+      font-size: 100px;
+      cursor: pointer;
+      margin: 20px 0;
+      animation: beat 1s infinite;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    .hidden { display: none; }
+    .sticker {
+      font-size: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="app">
+    <h2>Are you feeling well?</h2>
+    <button onclick="feeling(true)">Yes</button>
+    <button onclick="feeling(false)">No</button>
+  </div>
+
+  <script>
+    const app = document.getElementById('app');
+
+    function feeling(isYes) {
+      if(isYes){
+        app.innerHTML = `<h2>Yipeee!</h2><div class='sticker'>🥳🎉</div>`;
+      } else {
+        app.innerHTML = `<h2>Everything is going to be alright.<br>Get well soon love ❤️</h2>`;
+      }
+      setTimeout(showHeart, 2000);
+    }
+
+    function showHeart(){
+      app.innerHTML = `<div class='heart' onclick='goToMessage()'>❤️</div>`;
+    }
+
+    function goToMessage(){
+      app.innerHTML = `<h2>You are the greatest woman I ever met,<br>you will get through this soon ❤️</h2>
+      <button onclick='finalMessage()'>Continue</button>`;
+    }
+
+    function finalMessage(){
+      app.innerHTML = `<h2>I love you so much, you mean a lot to me ❤️<br><br>I LOVE YOU (Moye moye) 🥰</h2>`;
+    }
+  </script>
+</body>
+</html>
